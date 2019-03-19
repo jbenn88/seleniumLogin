@@ -153,7 +153,7 @@ def main():
   
 ############ Email reading code ########################
     imap_url = 'imap.gmail.com'
-    username = 'jamesa.benn@gmail.com' #'test1345637'
+    username = gmail_user 
     password = gmail_password
 
     connection = imaplib.IMAP4_SSL(imap_url, 993)
