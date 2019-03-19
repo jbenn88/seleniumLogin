@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 # Local package imports
-from secrets import blaze_user, blaze_password, fncc_user, fncc_password, gmail_password
+from secrets import blaze_user, blaze_password, fncc_user, fncc_password, gmail_password, gmail_user
 
 def main():
     
@@ -49,7 +49,7 @@ def main():
   
 ######### Email reading code #############################
     imap_url = 'imap.gmail.com'
-    username = 'jamesa.benn@gmail.com' #'test1345637'
+    username = gmail_user 
     password = gmail_password
 
     connection = imaplib.IMAP4_SSL(imap_url, 993)
