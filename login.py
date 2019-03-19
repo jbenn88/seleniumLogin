@@ -3,7 +3,6 @@
 # Full package imports
 import webbrowser, time, imaplib, email, mailbox, datetime, os, mimetypes
 #Partial package imports 
-from PIL import Image
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -17,8 +16,6 @@ def main():
     # sendTwoFactor()
     # getVerificationCode()
 
-    
-    
     # Open and login to Blaze CC
     print("Logging into Blaze...")
     
@@ -50,7 +47,7 @@ def main():
     enter = driver.find_element_by_id('btnNext').click()
     time.sleep(5)
   
-    ### Email reading code
+######### Email reading code #############################
     imap_url = 'imap.gmail.com'
     username = 'jamesa.benn@gmail.com' #'test1345637'
     password = gmail_password
@@ -115,7 +112,9 @@ def main():
                 if count == 2:
                     soup = BeautifulSoup(line, "html.parser")
                     code = soup.get_text("|", strip=True) 
-    
+  
+  ##################################################
+  
     print("Got verification code from email...")
     # Find verification code field, enter code pulled from email, click Submit
     verification_code_field = driver.find_element_by_id('ctl00_ContentPlaceHolder1_txtPasscode')
@@ -128,8 +127,7 @@ def main():
     print("Closing...")
     driver.close()
      
-    
-    # ------------ WORKING 3/14/19 @ 5:30 AM
+#########################################################
     
     # Open and log into First National CC 
     print("Logging into FNCC...")
@@ -153,7 +151,7 @@ def main():
     enter = driver.find_element_by_id('btnNext').click()
     time.sleep(3)
   
-    ### Email reading code
+############ Email reading code ########################
     imap_url = 'imap.gmail.com'
     username = 'jamesa.benn@gmail.com' #'test1345637'
     password = gmail_password
@@ -218,7 +216,9 @@ def main():
                 if count == 2:
                     soup = BeautifulSoup(line, "html.parser")
                     code = soup.get_text("|", strip=True) 
-    
+  
+  #########################################################
+  
     print("Got verification code from email...")
     # Find verification code field, enter code pulled from email, click Submit
     verification_code_field = driver.find_element_by_id('ctl00_ContentPlaceHolder1_txtPasscode')
